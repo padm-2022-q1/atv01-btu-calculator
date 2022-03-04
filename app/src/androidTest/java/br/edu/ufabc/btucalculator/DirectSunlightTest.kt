@@ -74,12 +74,7 @@ class DirectSunlightTest {
     @Test
     fun hasCorrectDefaultValue() {
         try {
-            onView(
-                AllOf.allOf(
-                    withContentDescription(switchUtil.description),
-                    instanceOf(SwitchMaterial::class.java)
-                )
-            )
+            onView(switchUtil.matcher)
                 .check(matches(isNotChecked()))
         } catch (e: NoMatchingViewException) {
             Assert.fail(switchUtil.notFound)
@@ -95,12 +90,7 @@ class DirectSunlightTest {
 
         try {
             onView(BTUTextViewUtil.withValue(valueOff)).check(matches(isDisplayed()))
-            onView(
-                AllOf.allOf(
-                    withContentDescription(switchUtil.description),
-                    instanceOf(SwitchMaterial::class.java)
-                )
-            )
+            onView(switchUtil.matcher)
                 .perform(click())
             onView(BTUTextViewUtil.withValue(valueOn)).check(matches(isDisplayed()))
         } catch (e: NoMatchingViewException) {
