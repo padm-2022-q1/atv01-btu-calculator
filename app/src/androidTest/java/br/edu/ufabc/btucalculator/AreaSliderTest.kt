@@ -22,7 +22,7 @@ class AreaSliderTest : SliderTestInterface {
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
 
     private val sliderTest = SliderTest(
-        SliderUtil("Slide to change the area", "Area", 2f, 200f, 1f),
+        areaSliderUtil,
         SliderLabelUtil("%d m^2", 2), "area_slider_label.csv", "area_slider_btu.csv"
     )
 

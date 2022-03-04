@@ -22,7 +22,7 @@ class PeopleSliderTest : SliderTestInterface {
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
 
     private val sliderTest = SliderTest(
-        SliderUtil("Slide to change the quantity of people", "People", 2f, 20f, 1f),
+        peopleSliderUtil,
         SliderLabelUtil("%d people", 2), "people_slider_label.csv", "people_slider_btu.csv"
     )
 

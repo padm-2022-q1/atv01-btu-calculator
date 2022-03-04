@@ -25,10 +25,7 @@ class IntegrationTest {
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
 
     private val integrationTestFile = "integration.csv"
-    private val areaSlider = SliderUtil("Slide to change the area", "Area", 2f, 200f, 0f)
-    private val peopleSlider =
-        SliderUtil("Slide to change the quantity of people", "People", 2f, 20f, 1f)
-    private val sunlightSwitch = DirectSunlightSwitchUtil()
+
 
     @Before
     fun setUp() {
@@ -42,9 +39,9 @@ class IntegrationTest {
                 val (people, area, sunlight, btu) = it.split(";")
 
                 try {
-                    onView(areaSlider.matcher).perform(SliderUtil.setValue(area.toFloat()))
-                    onView(peopleSlider.matcher).perform(SliderUtil.setValue(people.toFloat()))
-                    onView(sunlightSwitch.matcher).perform(sunlightSwitch.setChecked(sunlight == "yes"))
+                    onView(areaSliderUtil.matcher).perform(SliderUtil.setValue(area.toFloat()))
+                    onView(peopleSliderUtil.matcher).perform(SliderUtil.setValue(people.toFloat()))
+                    onView(sunlightSwitchUtil.matcher).perform(sunlightSwitchUtil.setChecked(sunlight == "yes"))
                     onView(BTUTextViewUtil.withValue(btu)).check(matches(isDisplayed()))
                 } catch (e: NoMatchingViewException) {
                     fail("Some component was not found during integration test: ${e.message}")
