@@ -1,4 +1,4 @@
-package br.edu.ufabc.helloworld
+package br.edu.ufabc.btucalculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
