@@ -57,12 +57,7 @@ class DirectSunlightTest {
     @Test
     fun hasCorrectText() {
         try {
-            onView(
-                AllOf.allOf(
-                    withText(switchUtil.text),
-                    instanceOf(SwitchMaterial::class.java)
-                )
-            )
+            onView(switchUtil.matcher)
                 .check(matches(isDisplayed()))
         } catch (e: NoMatchingViewException) {
             Assert.fail(switchUtil.notFound)
