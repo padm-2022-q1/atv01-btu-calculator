@@ -26,7 +26,6 @@ class IntegrationTest {
 
     private val integrationTestFile = "integration.csv"
 
-
     @Before
     fun setUp() {
         Espresso.setFailureHandler(CustomFailureHandler(InstrumentationRegistry.getInstrumentation()))
